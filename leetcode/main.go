@@ -1,8 +1,24 @@
 package main
 
-import "leetcode/problem2206"
+import (
+	"leetcode/lru"
+)
+
+const LIMIT = 4
 
 func main() {
-	// problem2206.DivideArray([]int{3, 2, 3, 2, 2, 2})
-	problem2206.DivideArray([]int{1, 2, 3, 4})
+	n := make(map[int]*lru.Node)
+	cache := lru.Lru{
+		Limit: LIMIT,
+		Nodes: n,
+	}
+
+	cache.Put(1, "1")
+	cache.Put(2, "2")
+	cache.Get(1)
+	cache.Put(3, "3")
+	cache.Put(4, "4")
+	cache.Put(5, "5")
+	cache.Get(3)
+	cache.Get(7)
 }
