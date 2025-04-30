@@ -21,4 +21,9 @@ func main() {
 	cache.Put(5, "5")
 	cache.Get(3)
 	cache.Get(7)
+	cache.Get(1)
+	cache.Put(6, "6")
+	cache.Put(7, "7")
+	cache.Get(7)
+
 }

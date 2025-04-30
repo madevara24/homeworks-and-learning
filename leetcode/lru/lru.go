@@ -51,7 +51,9 @@ func (l *Lru) Put(key int, value interface{}) {
 }
 
 func (l *Lru) Get(key int) interface{} {
+	fmt.Println("Fetcing ", key, "...")
 	if node, ok := l.Nodes[key]; ok {
+		fmt.Println("Found ", node.Value, " in ", key, "...")
 		l.MoveToHead(node)
 		return node
 	}
